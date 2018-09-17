@@ -1,0 +1,48 @@
+//Must be run on (editor.p5js.org)
+
+//Made by: Aleks Hafermaas
+
+//The Dancing Android
+
+//For added effect, look for line (13) of code. Once found, you can replace the pre-existing code with 
+//this blank: background('ß'); . Where the sz (ß) is located, replace it with other colors, such as blue or green.
+
+
+
+function setup() {
+  createCanvas(400, 400);
+}
+
+function draw() {
+background(220);
+	if (!mouseIsPressed)
+		robot_pos1()
+	else
+		robot_pos2()
+
+function robot_pos1(){
+	rectMode(CENTER)
+	rect(200, 200, 80, 120) //body
+	rect(200, 115, 40, 40) //head
+	rect(148, 190, 20, 80) //arm_1
+	rect(252, 190, 20, 80) //arm_2
+	rect(180, 302, 30, 80) //leg_1
+	rect(220, 302, 30, 80) //leg_2
+}	
+
+
+	
+function robot_pos2(){
+	rectMode(CENTER)
+	rect(200, 200, 80, 120) //body
+	rect(200, 115, 40, 40) //head
+	rect(180, 302, 30, 80) //leg_1
+	rect(220, 302, 30, 80) //leg_2
+	rotate(-QUARTER_PI);
+	rect(0, 175, 20, 80) //arm_1
+	rotate(HALF_PI)
+	translate(280, -110);
+	rect(0, 0, 20, 80) //arm_2
+}
+	
+}
