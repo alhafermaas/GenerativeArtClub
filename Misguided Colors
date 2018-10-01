@@ -1,0 +1,75 @@
+//By Aleks Hafermaas
+//Please run on editor.p5js.org
+//Piece: Misguided Colors
+
+var d = 8
+var p = 142
+
+function setup() {
+  cnv = createCanvas(500, 500);
+	cnv.mouseWheel(animation);
+	frameRate(60)
+}
+
+function draw() {
+  background(220);
+	fill("yellow")
+	strokeWeight(2)
+	translate(250,250)
+	background("black")
+	ellipse(
+		d,d,d,d
+	)
+	
+	fill("blue")
+	ellipse(
+		-d,-d,-d,-d
+	)
+	
+	fill("green")
+	ellipse(
+		-d,d,-d,d
+	)
+		
+	fill("red")
+	ellipse(
+		d,-d,d,-d
+	)
+	
+	fill("red")
+	ellipse(
+		p,-p,p,-p
+	)
+	
+	fill("blue")
+	ellipse(
+		-p,-p,-p,-p
+		
+	) 
+	
+	fill("green")
+	ellipse(
+		-p,p,-p,p
+	)
+		
+	fill("yellow")
+	ellipse(
+		p,p,p,p
+  )
+	
+	
+}
+
+function animation(event) {
+	if (event.deltaY > 0) {
+		d = d + 10;
+	} else {
+		d =d - 10;
+	}
+	
+	if (event.deltaY > 0) {
+		p = p + 10;
+	} else {
+		p = p - 10;
+	}
+}
